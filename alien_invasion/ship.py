@@ -1,6 +1,7 @@
 import pygame
+from pygame.sprite import Sprite
 
-class Ship:
+class Ship(Sprite):
     """管理飞船的类"""
     
     def __init__(self, ai_game):
@@ -8,6 +9,7 @@ class Ship:
         self.screen = ai_game.screen
         self.screen_rect = ai_game.screen.get_rect()
         self.settings = ai_game.settings
+        super().__init__()
 
         #加载飞船图像并获取其外接矩形
         self.image = pygame.image.load('images/ship.bmp')
